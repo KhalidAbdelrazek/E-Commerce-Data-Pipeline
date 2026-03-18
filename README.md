@@ -66,11 +66,11 @@ E-Commerce/
 
 **Pipeline Concept:**  
 *(Placeholder - Add your own screenshot!)*  
-![Pipeline Screenshot](docs/images/pipeline.png)
+![Pipeline Screenshot](docs/pipeline.png)
 
-**Analytics Dashboard:**  
-*(Placeholder - Add your dashboard here!)*  
-![Dashboard](docs/images/dashboard.png)
+<!-- **Analytics Dashboard:**  
+*(Placeholder - Add your dashboard here!)*
+![Dashboard](docs/dashboard.png) -->
 
 ## 🚀 How To Run
 
@@ -106,7 +106,7 @@ E-Commerce/
      2. `data cleaning/cleansing.ipynb`
      3. `ETL/etl.ipynb`
 
-## 🔮 Future Improvements
+<!-- ## 🔮 Future Improvements
 
 - [ ] Implement Apache Airflow or Prefect to schedule and orchestrate the ETL execution.
 - [ ] Transition from processing locally to utilizing PySpark for larger-scale distributed transformations.
@@ -116,4 +116,4 @@ E-Commerce/
 ## 👨‍💻 Author
 
 Built with ❤️ for Data Engineering.  
-Feel free to reach out, suggest improvements, or open a pull request!
+Feel free to reach out, suggest improvements, or open a pull request! -->

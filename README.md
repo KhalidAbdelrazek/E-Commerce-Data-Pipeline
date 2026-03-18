@@ -83,8 +83,8 @@ E-Commerce/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/KhalidAbdelrazek/ecommerce-data-pipeline.git
-   cd ecommerce-data-pipeline
+   git clone https://github.com/KhalidAbdelrazek/E-Commerce-Data-Pipeline.git
+   cd E-Commerce-Data-Pipeline
    ```
 
 2. **Create a virtual environment and install dependencies:**

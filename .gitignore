@@ -1,0 +1,41 @@
+# Raw datasets
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.json
+*.xlsx
+
+# Database files
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# Environment files
+.env
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# Logs
+logs/
+*.log
+
+# Spark temp folders
+spark-warehouse/
+.spark-staging/
+metastore_db/
+
+# Notebooks
+.ipynb_checkpoints/

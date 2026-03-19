@@ -68,9 +68,9 @@ E-Commerce/
 *(Placeholder - Add your own screenshot!)*  
 ![Pipeline Screenshot](docs/pipeline.png)
 
-<!-- **Analytics Dashboard:**  
+**Analytics Dashboard:**  
 *(Placeholder - Add your dashboard here!)*
-![Dashboard](docs/dashboard.png) -->
+![Dashboard](power bi/dashboard.mp4)
 
 ## 🚀 How To Run
 

@@ -61,16 +61,13 @@ E-Commerce/
 ## 🖼 Screenshots
 
 **Data Warehouse Schema Diagram:**  
-*(Extracted from DB SCHEMA)*
 ![Schema Diagram](DB%20SCHEMA/schema.png)
 
 **Pipeline Concept:**  
-*(Placeholder - Add your own screenshot!)*  
 ![Pipeline Screenshot](docs/pipeline.png)
 
 **Analytics Dashboard:**  
-*(Placeholder - Add your dashboard here!)*
-![Dashboard](power bi/dashboard.mp4)
+![Dashboard](power bi/dashboard.gif)
 
 ## 🚀 How To Run
 

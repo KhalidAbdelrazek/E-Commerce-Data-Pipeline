@@ -151,3 +151,25 @@ LEFT JOIN dbo.dim_reviews r   ON f.ReviewKey = r.ReviewKey
 LEFT JOIN dbo.dim_date d_purch ON f.OrderPurchaseDateKey = d_purch.DateKey
 LEFT JOIN dbo.dim_date d_deliv ON f.DeliveredCustomerDateKey = d_deliv.DateKey
 LEFT JOIN dbo.dim_date d_est   ON f.EstimatedDeliveryDateKey = d_est.DateKey;
+
+
+SELECT COUNT(DISTINCT CustomerKey)
+FROM fact_orders;
+
+select count(*) from fact_orders
+
+SELECT SUM(payment_value) * 1.0 / COUNT(DISTINCT CustomerKey) AS AvgCustomerValue
+FROM fact_orders;
+
+
+SELECT TOP 20 
+    f.CustomerKey,
+    AVG(r.review_score) AS AvgReview,
+    COUNT(*) AS OrderCount,
+    STRING_AGG(r.review_comment_message, ' | ') AS Comments
+FROM fact_orders f
+JOIN dim_reviews r
+    ON f.ReviewKey = r.ReviewKey
+GROUP BY f.CustomerKey
+HAVING AVG(r.review_score) IS NOT NULL
+ORDER BY AvgReview ASC;

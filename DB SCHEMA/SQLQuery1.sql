@@ -173,3 +173,26 @@ JOIN dim_reviews r
 GROUP BY f.CustomerKey
 HAVING AVG(r.review_score) IS NOT NULL
 ORDER BY AvgReview ASC;
+
+
+WITH CustomerStats AS (
+    SELECT TOP 20 
+        f.CustomerKey,
+        AVG(CAST(r.review_score AS FLOAT)) AS AvgReview,
+        COUNT(f.FactKey) AS OrderCount,
+        MIN(f.OrderApprovedDateKey) AS MinDateKey
+    FROM dbo.fact_orders f
+    JOIN dbo.dim_reviews r ON f.ReviewKey = r.ReviewKey
+    GROUP BY f.CustomerKey
+    HAVING AVG(r.review_score) IS NOT NULL
+    ORDER BY AvgReview ASC
+)
+SELECT 
+    cs.*,
+    d.FullDate AS FirstApprovedDate,
+    (SELECT STRING_AGG(CAST(r2.review_comment_message AS NVARCHAR(MAX)), ' | ')
+     FROM dbo.fact_orders f2
+     JOIN dbo.dim_reviews r2 ON f2.ReviewKey = r2.ReviewKey
+     WHERE f2.CustomerKey = cs.CustomerKey) AS Comments
+FROM CustomerStats cs
+JOIN dbo.dim_date d ON cs.MinDateKey = d.DateKey;

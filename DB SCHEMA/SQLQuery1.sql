@@ -196,3 +196,42 @@ SELECT
      WHERE f2.CustomerKey = cs.CustomerKey) AS Comments
 FROM CustomerStats cs
 JOIN dbo.dim_date d ON cs.MinDateKey = d.DateKey;
+
+
+
+
+SELECT 
+    -- Orders (Fact)
+    f.*, c.*, p.*,s.*, r.*,
+    d_purch.FullDate AS PurchaseDate,
+    d_appr.FullDate  AS ApprovedDate,
+    d_carr.FullDate  AS CarrierDeliveredDate,
+    d_cust.FullDate  AS CustomerDeliveredDate,
+    d_est.FullDate   AS EstimatedDeliveryDate,
+    d_revC.FullDate  AS ReviewCreationDate,
+    d_revA.FullDate  AS ReviewAnswerDate,
+    d_ship.FullDate  AS ShippingLimitDate
+
+FROM dbo.fact_orders f
+INNER JOIN dbo.dim_customers c ON f.CustomerKey = c.CustomerKey
+INNER JOIN dbo.dim_products p  ON f.ProductKey = p.ProductKey
+INNER JOIN dbo.dim_sellers s   ON f.SellerKey = s.SellerKey
+INNER JOIN dbo.dim_reviews r   ON f.ReviewKey = r.ReviewKey
+INNER JOIN dbo.dim_date d_purch ON f.OrderPurchaseDateKey = d_purch.DateKey
+INNER JOIN dbo.dim_date d_appr  ON f.OrderApprovedDateKey = d_appr.DateKey
+INNER JOIN dbo.dim_date d_carr  ON f.DeliveredCarrierDateKey = d_carr.DateKey
+INNER JOIN dbo.dim_date d_cust  ON f.DeliveredCustomerDateKey = d_cust.DateKey
+INNER JOIN dbo.dim_date d_est   ON f.EstimatedDeliveryDateKey = d_est.DateKey
+INNER JOIN dbo.dim_date d_revC  ON f.ReviewCreationDateKey = d_revC.DateKey
+INNER JOIN dbo.dim_date d_revA  ON f.ReviewAnswerDateKey = d_revA.DateKey
+INNER JOIN dbo.dim_date d_ship  ON f.ShippingLimitDateKey = d_ship.DateKey
+
+WHERE 
+    f.OrderPurchaseDateKey > 19000101 AND f.OrderPurchaseDateKey IS NOT NULL AND
+    f.OrderApprovedDateKey > 19000101 AND f.OrderApprovedDateKey IS NOT NULL AND
+    f.DeliveredCarrierDateKey > 19000101 AND f.DeliveredCarrierDateKey IS NOT NULL AND
+    f.DeliveredCustomerDateKey > 19000101 AND f.DeliveredCustomerDateKey IS NOT NULL AND
+    f.EstimatedDeliveryDateKey > 19000101 AND f.EstimatedDeliveryDateKey IS NOT NULL AND
+    f.ReviewCreationDateKey > 19000101 AND f.ReviewCreationDateKey IS NOT NULL AND
+    f.ReviewAnswerDateKey > 19000101 AND f.ReviewAnswerDateKey IS NOT NULL AND
+    f.ShippingLimitDateKey > 19000101 AND f.ShippingLimitDateKey IS NOT NULL;

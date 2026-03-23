@@ -76,7 +76,7 @@ The analytical layer of this project features 4 comprehensive Power BI dashboard
 ![Business Overview Dashboard](docs/dashboard1.gif)
 
 Focuses on the high-level metrics driving the business forward.
-- **Profitability Trends:** Highlights a significant **21.8% Monthly Profit growth**.
+- **Profitability Trends:** Highlights a significant **22.5% Monthly Profit growth**.
 - **Geographic Dominance:** Shows precise regional performance, tracking metrics like SP State contributing **71% of total orders**.
 
 ### 📦 Page 2: Product Analysis

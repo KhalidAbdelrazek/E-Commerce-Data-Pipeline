@@ -1,7 +1,6 @@
 USE [E-Commerce];
 GO
 
--- 1. DROP TABLES (Reverse order of dependencies)
 IF OBJECT_ID('dbo.fact_orders', 'U') IS NOT NULL DROP TABLE dbo.fact_orders;
 IF OBJECT_ID('dbo.dim_reviews', 'U') IS NOT NULL DROP TABLE dbo.dim_reviews;
 IF OBJECT_ID('dbo.dim_customers', 'U') IS NOT NULL DROP TABLE dbo.dim_customers;
@@ -10,7 +9,6 @@ IF OBJECT_ID('dbo.dim_sellers', 'U') IS NOT NULL DROP TABLE dbo.dim_sellers;
 IF OBJECT_ID('dbo.dim_date', 'U') IS NOT NULL DROP TABLE dbo.dim_date;
 GO
 
--- 2. CREATE DIMENSIONS
 CREATE TABLE dbo.dim_date(
     DateKey INT PRIMARY KEY,
     FullDate DATE NOT NULL,
@@ -66,7 +64,6 @@ CREATE TABLE dbo.dim_reviews(
     CONSTRAINT FK_Review_Date FOREIGN KEY (review_creation_date_key) REFERENCES dbo.dim_date(DateKey)
 );
 
--- 3. CREATE FACT TABLE
 CREATE TABLE dbo.fact_orders(
     FactKey BIGINT IDENTITY(1,1) PRIMARY KEY,
     order_id NVARCHAR(50),

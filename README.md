@@ -73,14 +73,14 @@ E-Commerce/
 The analytical layer of this project features 4 comprehensive Power BI dashboard pages designed with an **'Executive Dark Mode' Cyber-Space aesthetic** (Neon Green accents, Gold borders, dark textured backgrounds). It uses high-contrast KPIs and custom iconography to effectively track E-Commerce health.
 
 ### 📈 Page 1: Business Overview
-![Business Overview Dashboard](docs/dashboard1.gif)
+![Business Overview Dashboard](docs/dashboard1.jpg)
 
 Focuses on the high-level metrics driving the business forward.
 - **Profitability Trends:** Highlights a significant **22.5% Monthly Profit growth**.
 - **Geographic Dominance:** Shows precise regional performance, tracking metrics like SP State contributing **71% of total orders**.
 
 ### 📦 Page 2: Product Analysis
-![Product Analysis Dashboard](docs/dashboard2.gif)
+![Product Analysis Dashboard](docs/dashboard2.jpg)
 
 A deep-dive into catalog performance and logistics impact.
 - **Revenue & Price Gap:** Identifies pricing outliers and revenue opportunities.
@@ -88,14 +88,14 @@ A deep-dive into catalog performance and logistics impact.
 - **Delivery Variance:** Features a detailed Histogram showing shipping reliability and delivery window variances.
 
 ### 🚚 Page 3: Revenue & Logistics
-![Revenue & Logistics Dashboard](docs/dashboard3.gif)
+![Revenue & Logistics Dashboard](docs/dashboard3.jpg)
 
 Detailed view of shipping economics and long-term profitability.
 - **Shipping Cost Absorption Ratio:** Represented via an intuitive Donut chart.
 - **Profit Performance:** Year-over-year tracking and benchmarking of profit margins.
 
 ### 👥 Page 4: Customer Analysis
-![Customer Analysis Dashboard](docs/dashboard4.gif)
+![Customer Analysis Dashboard](docs/dashboard4.jpg)
 
 The most advanced analytical page, providing deep insights into buyer behavior.
 - **RFM Customer Segmentation:** Categorizes customers into **VIP, Standard**, and **Budget** tiers based on purchasing behavior.

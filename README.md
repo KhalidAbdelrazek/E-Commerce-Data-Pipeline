@@ -18,7 +18,7 @@ The data pipeline follows a structured modular architecture to extract, transfor
 
 ```mermaid
 graph LR
-    A[(Raw Data / Kaggle)] -->|Extraction| B(Python / PySpark)
+    A[(Raw Data / Kaggle)] -->|Extraction| B(Python / Pandas)
     B -->|Cleaning| C(Data Cleansing Module)
     C -->|ETL via SQLAlchemy| D[(SQL Server Fact & Dim Tables)]
     D -->|Analytics Layer| E(Dashboards / Reporting)
